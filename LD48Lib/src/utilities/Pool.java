@@ -22,6 +22,10 @@ public class Pool {
         this.capacity = capacity;
         items = new ArrayList<Object>(capacity);
     }
+    
+    public void clear(){
+        count = 0;
+    }
 
     public void init(List<Object> entities) {
         for (int i = 0; i < entities.size(); i++) {

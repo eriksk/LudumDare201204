@@ -1,8 +1,17 @@
 package content;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.openal.Audio;
+import org.newdawn.slick.openal.AudioLoader;
+import org.newdawn.slick.util.ResourceLoader;
 
 /**
  *
@@ -48,5 +57,15 @@ public class ContentManager {
         }
         
         return loadImage(path);
+    }
+    
+    public Audio loadWav(String path){
+        Audio a = null;
+        try {
+            a = AudioLoader.getAudio("WAV", ResourceLoader.getResourceAsStream(root + path));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }        
+        return a;
     }
 }
