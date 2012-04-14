@@ -16,6 +16,9 @@ public class Util {
     //TODO: Ovelook references...
     
     private static Random rand;
+    static {
+        rand = new Random(System.currentTimeMillis());
+    }
     static Vector2f temp = new Vector2f();
     
     public static float AngleFrom(Vector2f point1, Vector2f point2) {
@@ -61,5 +64,17 @@ public class Util {
     
     public static int Rand(int min, int max) {
         return min + (rand.nextInt(max) - min);
+    }
+    
+    public static float clamp(float value, float min, float max){
+        if(value < min) return min;
+        if(value > max) return max;
+        return value;
+    }
+    
+    public static float distance(float x1, float y1, float x2, float y2){
+        float x = x1 - x2;
+        float y = y1 - y2;
+        return (float)Math.sqrt((double)(x * x + y * y));
     }
 }
