@@ -33,6 +33,7 @@ public class AudioManager {
     
     public void load(ContentManager content){
         sounds.put("coin", content.loadWav("audio/coin.wav"));
+        sounds.put("hit", content.loadWav("audio/hit.wav"));
         sounds.put("fire", content.loadWav("audio/fire.wav"));
         sounds.put("fire_enemy", content.loadWav("audio/fire_enemy.wav"));
         sounds.put("explosion", content.loadWav("audio/explosion.wav"));
