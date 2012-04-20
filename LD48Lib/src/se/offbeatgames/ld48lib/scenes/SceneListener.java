@@ -10,4 +10,5 @@ package se.offbeatgames.ld48lib.scenes;
  */
 public interface SceneListener {
     public void onActivated();
+    public void onDeactivated();
 }

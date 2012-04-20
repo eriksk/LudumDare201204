@@ -6,7 +6,6 @@ package se.offbeatgames.ld48lib.scenes;
 
 import java.util.HashMap;
 import org.newdawn.slick.Graphics;
-import se.offbeatgames.ld48lib.content.ContentManager;
 
 /**
  *
@@ -30,6 +29,9 @@ public class SceneManager {
     }
 
     public void setCurrentScene(String currentScene) {
+        if(!"".equals(this.currentScene)){
+            this.scenes.get(this.currentScene).onDeactivated();
+        }
         this.currentScene = currentScene;
         this.scenes.get(currentScene).onActivated();
     }

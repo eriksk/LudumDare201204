@@ -28,4 +28,12 @@ public class Rectangle {
         if(y > this.y + this.height) return false;
         return true;
     }
+    
+    public boolean intersects(Rectangle other){
+        if(other.x + other.width < this.x) return false;
+        if(other.y + other.height < this.y) return false;
+        if(other.x > this.x + this.width) return false;
+        if(other.y > this.y + this.height) return false;
+        return true;
+    }
 }
