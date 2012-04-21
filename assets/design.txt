@@ -1,0 +1,48 @@
+RPG.
+Pokemon style.
+Talk to NPCs
+Small Island, all the world they know of.
+Puzzles to get build a boat and leave the tiny island...
+Only to go around the world and come back to that same island, when you're old?!
+You're a kid who wants to be an adventurer like in one of your old stories... But everyone thinks that there isn't any adventure to do.
+
+Game Objects
+* Houses that you can go into
+* NPCs
+* Cats
+* Enemies?
+* Fish?
+
+Stuff you need for the boat
+* Trees, for wood for the boat
+* Nails, to put the boat together
+* A sail, use the city flag!
+* Steering wheel? (inte rätt ord...)
+
+Inventory
+
+Interactions
+Give [item]
+Talk to [NPC]
+Pick up [item]
+
+Special inventory list for the boat parts
+[wood][nails][sail][mast][wheel]
+
+
+Interaction system
+* Node tree based on selection
+
+Animations
+* water
+* Flag
+* Boat?
+
+Scenes
+* GameScene - normal
+* Cutscene - non interactable... maybe only with text tough...
+
+Text
+* Textboxes
+	* Text wrapping
+* Color coded text (if there's time)
