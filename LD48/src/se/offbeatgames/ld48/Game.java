@@ -41,7 +41,8 @@ public class Game extends BasicGame {
             Keyboard.KEY_RIGHT,
             Keyboard.KEY_UP,
             Keyboard.KEY_DOWN,
-            Keyboard.KEY_SPACE
+            Keyboard.KEY_SPACE,
+            Keyboard.KEY_TAB
         });
         
         sceneMan = new SceneManager();

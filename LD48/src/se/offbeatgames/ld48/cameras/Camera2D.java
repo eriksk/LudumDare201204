@@ -4,10 +4,9 @@
  */
 package se.offbeatgames.ld48.cameras;
 
-import java.awt.GraphicsDevice;
 import org.newdawn.slick.Graphics;
 import se.offbeatgames.ld48.Game;
-import se.offbeatgames.ld48lib.utilities.Util;
+import se.offbeatgames.tiles.MapTiles;
 
 /**
  *
@@ -28,7 +27,8 @@ public class Camera2D {
         this.y = y;
     }
     
-    public void update(float dt){
+    public void update(float dt, MapTiles map){
+        // Todo: clamp to mapsize probably after scale
     }
     
     public void translate(Graphics g){

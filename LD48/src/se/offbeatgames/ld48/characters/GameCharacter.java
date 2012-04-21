@@ -24,7 +24,6 @@ public class GameCharacter {
     protected SpriteSheet sheet;
     protected Image texture;
     protected SpeechTree speech;
-    public int col, row;
 
     public GameCharacter() {
         currentAnim = "";

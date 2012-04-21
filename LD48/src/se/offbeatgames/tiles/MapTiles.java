@@ -7,7 +7,10 @@ package se.offbeatgames.tiles;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
+import se.offbeatgames.ld48.characters.CharacterManager;
 import se.offbeatgames.ld48.characters.GameCharacter;
+import se.offbeatgames.ld48.scenes.GameScene;
+import se.offbeatgames.ld48.scripts.MapScript;
 import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.ld48lib.geoms.Rectangle;
 
@@ -21,13 +24,15 @@ public class MapTiles {
     private Layer[] layers;
     private Image texture;
     private SpriteSheet sheet;
+    private MapScript[] scripts;
 
-    public MapTiles(TiledData data) {
+    public MapTiles(TiledData data, MapScript[] scripts) {
         this.data = data;
         this.layers = data.layers;
         for (int i = 0; i < layers.length; i++) {
             layers[i].convertToGrid();
         }
+        this.scripts = scripts;
     }
 
     public void load(ContentManager content) {
@@ -35,28 +40,30 @@ public class MapTiles {
         sheet = new SpriteSheet(texture, 16, 16);
     }
 
-    public void collide(GameCharacter character) {
-        Layer collLayer = getCollisionLayer();
-        int col = (int) (character.x + 8) / 16;
-        int row = (int) (character.y + 8) / 16;
-        int cell = collLayer.grid[col][row];
-        if (cell != -1) {
-            // collision found
-            character.x = character.col * 16;
-            character.y = character.row * 16;
-        }
-    }
-
     public boolean collides(float x, float y) {
         Layer collLayer = getCollisionLayer();
         int col = (int) (x) / 16;
         int row = (int) (y) / 16;
-        int cell = collLayer.grid[col][row];
-        if (cell != -1) {
-            // collision found
-            return true;
+        if (col > -1 && row > -1 && col < collLayer.grid.length && row < collLayer.grid[0].length) {
+            int cell = collLayer.grid[col][row];
+            if (cell != -1) {
+                // collision found
+                return true;
+            }
         }
         return false;
+    }
+
+    public void cutDownTree(float x, float y) {
+        int col = (int) x / 16;
+        int row = (int) y / 16;
+        for (int l = 0; l < layers.length; l++) {
+            Layer layer = layers[l];
+            if (layer.grid[col][row] == 1) {
+                layer.grid[col][row] = -1;
+                getCollisionLayer().grid[col][row] = -1;
+            }
+        }
     }
 
     public Layer getCollisionLayer() {
@@ -68,7 +75,10 @@ public class MapTiles {
         return null;
     }
 
-    public void update(float dt) {
+    public void update(float dt, CharacterManager charMan, GameScene game) {
+        for (int i = 0; i < scripts.length; i++) {
+            scripts[i].update(charMan, this, game);
+        }
     }
 
     public void draw(Graphics g) {

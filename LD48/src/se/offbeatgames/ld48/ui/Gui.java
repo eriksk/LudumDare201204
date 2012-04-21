@@ -17,7 +17,7 @@ import se.offbeatgames.ld48lib.input.InputManager;
 public class Gui {
 
     private TextBox text;
-    private Font font;
+    public Font font;
 
     public Gui() {
     }
