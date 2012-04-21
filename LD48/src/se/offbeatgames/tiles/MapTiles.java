@@ -9,6 +9,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
 import se.offbeatgames.ld48.characters.CharacterManager;
 import se.offbeatgames.ld48.characters.GameCharacter;
+import se.offbeatgames.ld48.particles.ParticleManagerImpl;
 import se.offbeatgames.ld48.scenes.GameScene;
 import se.offbeatgames.ld48.scripts.MapScript;
 import se.offbeatgames.ld48lib.content.ContentManager;
@@ -54,16 +55,19 @@ public class MapTiles {
         return false;
     }
 
-    public void cutDownTree(float x, float y) {
+    public boolean cutDownTree(float x, float y, ParticleManagerImpl pMan) {
         int col = (int) x / 16;
         int row = (int) y / 16;
         for (int l = 0; l < layers.length; l++) {
             Layer layer = layers[l];
             if (layer.grid[col][row] == 1) {
+                pMan.cutTree((col * 16) + 8, (row * 16) + 8);
                 layer.grid[col][row] = -1;
                 getCollisionLayer().grid[col][row] = -1;
+                return true;
             }
         }
+        return false;
     }
 
     public Layer getCollisionLayer() {

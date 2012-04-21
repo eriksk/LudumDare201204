@@ -33,7 +33,7 @@ public class TextBox {
         x = (512 - width) / 2;
         y = Game.height - (height + 4);
         margin = 8;
-        bgColor = new Color(0f, 0f, 0f, 0.5f);
+        bgColor = new Color(0f, 0f, 0f, 0.8f);
         borderColor = Color.orange;
         this.font = font;
     }

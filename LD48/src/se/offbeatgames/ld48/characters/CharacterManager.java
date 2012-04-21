@@ -7,6 +7,7 @@ package se.offbeatgames.ld48.characters;
 import java.util.ArrayList;
 import java.util.List;
 import se.offbeatgames.ld48.Game;
+import se.offbeatgames.ld48.particles.ParticleManagerImpl;
 import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.tiles.MapTiles;
 
@@ -37,12 +38,12 @@ public class CharacterManager {
         characters.add(mayor);
     }
 
-    public void update(float dt, MapTiles map) {
+    public void update(float dt, MapTiles map, ParticleManagerImpl pMan) {
         for (int i = 0; i < characters.size(); i++) {
             GameCharacter c = characters.get(i);
             c.update(dt, map);
         }
-        player.update(dt, map);
+        player.update(dt, map, pMan);
     }
 
     public void draw() {

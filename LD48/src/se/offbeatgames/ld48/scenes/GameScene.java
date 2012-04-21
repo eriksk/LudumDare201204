@@ -12,9 +12,11 @@ import org.newdawn.slick.util.ResourceLoader;
 import se.offbeatgames.ld48.Game;
 import se.offbeatgames.ld48.cameras.Camera2D;
 import se.offbeatgames.ld48.characters.CharacterManager;
+import se.offbeatgames.ld48.particles.ParticleManagerImpl;
 import se.offbeatgames.ld48.ui.Gui;
 import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.ld48lib.input.InputManager;
+import se.offbeatgames.ld48lib.particles.ParticleManager;
 import se.offbeatgames.ld48lib.scenes.Scene;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 import se.offbeatgames.tiles.MapTiles;
@@ -31,6 +33,7 @@ public class GameScene extends Scene {
     CharacterManager charMan;
     Gui gui;
     Camera2D cam;
+    ParticleManagerImpl pMan;
 
     public GameScene(SceneManager manager) {
         super(manager);
@@ -48,6 +51,9 @@ public class GameScene extends Scene {
 
         gui = new Gui();
         gui.load(content);
+        
+        pMan = new ParticleManagerImpl(Game.width, Game.height);
+        pMan.load(content);
 
         gotoScene("mainland");
         
@@ -80,7 +86,8 @@ public class GameScene extends Scene {
     public void update(float dt) {
         super.update(dt);
         map.update(dt, charMan, this);
-        charMan.update(dt, map);
+        charMan.update(dt, map, pMan );
+        pMan.update(dt);
         gui.update(dt);
         cam.move(charMan.player.x, charMan.player.y);
         cam.update(dt, map);
@@ -92,6 +99,7 @@ public class GameScene extends Scene {
         cam.translate(g);
         map.draw(g);
         charMan.draw();
+        pMan.draw();
         g.resetTransform();
         gui.draw(g);
 

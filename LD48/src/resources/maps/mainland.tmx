@@ -5,17 +5,17 @@
  </tileset>
  <layer name="bg" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztlUESgCAIRfEQ1Vm8/8Vq6ZgY8CGmyQWrhPf8pVUiqqtuVZiaPSvBbAnfwyuCr/GI5EscMvmS3q/zOQdNXxY/8h1oe7P4Hhn8lY/cO4hvO+e4anPgW8/urpyB/rf6dVo+6jBaN8ofzQDdf9Q3kM3vZ1j5T14o38Ju50aef0++Z/Za/szhLT7nkM1HHDzyX3zeg5uP3qEnyVZW7w==
+   eJztll0OhCAMhDGLew90L+H9L7ZsIglhaTul/Lz4MIkR22+oQLmcc9ejP32i3lHbrd9zKMZKhY7srSJ/j7+I8eTT6ovKj/A5X6iPEfwkxMNIvhfY1L+fwefYeexp4HP/QJqXV3zbUgMkZ/JuqYGF36MGFn5eg1V8yz7Yo44G/p7paORLe186d0qdmSeET81b4ktx0n7gao7w0b5V8yDVHJlDUOSozQGNtdagZc2hfKQGI/lIHmr9ae5BlruVpn9p/EsKi/noebyaL63jGfwkzfnTm8+dxS09Vctv3X8z+KmnljFUj817GxWL1r7mo5a/fM/FSt9/AUCdXwc=
   </data>
  </layer>
  <layer name="houses" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJztV8sOwjAMK9zgwGsM/v9P6aQeoigPp0sEByxFm9bE9qI1Wlv7w8JxBJLj5c3oIpw0L8tDlId72NuPGQ5eo91HeKyaBwmpXvOFardm15x6LD3OBo/3TFtHe2BxIZqah+y9xPk9/Qog7yatad+ZtO7lIh45rO8soh+dZShuPZ49riO2+3uQg+pHsfXnMmIZV61XmfqHSQ1Pv2rvfcvDDDI9rCzeAQ8Sx1vgXJO8cn1pZr2U/L2zB4Wm782pXwc6R6v6jOpX9TlzjnMg+zlzjlNdql8927R/8IrzgcZl/f8iZyleE/GgaTch1+KUPEfewTqLoMg4Q9GrhA/DIAby
+   eJztV10LwyAMlL1tD/vquv3/fzoFBQm5eKnxrQeHpTV3MWioKZ2wcKlk5ozmHfFlNPt5UTl4dWQOs/U4oiFj0LNHx4p5d9TiUV6sd0p2zDVzy7wZOqN36DtbA0uL8UQ5RJ8lqT/yXwFmbdo3tM+076O5TI4S1j7z+Ht7GYtn5ifzUVmeX06N3t+LUp975VZHVKsV/l78Mvc6av6rzl7DV4wrczjiH5lD0dgFrfrL2AYtXnKk0cCsv8VqPQvFaWd/xh8BxY36VJT/7L5A/mwfne3xaP+x/mydvYjs4xLMeY7s471v77/y/wL5yfdRPkjL+v9l7lIyxpMD8k7KXEtTy9mzBusuwiLiDtWPGv5hjQi1
   </data>
  </layer>
  <layer name="collision" width="32" height="32" opacity="0.32">
   <data encoding="base64" compression="zlib">
-   eJzNlEEOAzEIA/fY/7+41yqyzZjNoUiVtoIwJkCe5z/ts/zdYp86lK/R2rLd2cR3/pQv8ZN/0uBYDZ/Wf2o4c6hvkmPip5gUR3rkYglfaaDx6v6n+Vem7l35XTyZM2q0ZzT/9p0hc9X0xuXd1DDxT9+Gn+aouf8t350/+cSm/W52nPDb+pylHv5yCJ9oUfekOC6OsIkGskPqzC0NTlfzf2ukfsd3NTb3sOW7Ooi2lEPx3+5U+2408+V4aX4nvvpu+CnXxHf63+zUdnaSrht8Mq/pPLWzJ24nbs1/0k96O+Uk/Xf1OS3T+zDNINkJlcfpSMx0ZtJ8akq9+QIPYgyR
+   eJzNlEcKA0EMBPfo/7/YVyM6lMQeLDAYFKoVZp/nP+1z/L3FnjqUb6N1y3a5ie/8qV7iJ3/T4FgbPu1/apg11H9So/FTTIojO3KxhK800Hg1/3b/ytTcld/FkzujRndG61+/M+SuNrtxdS89NP70Xfjpjjbzv/Jd/uQTa+9788YJf9ufs1T/l0P4RIuak9Lh4gibaFA7cvw3NWz21DRdjfTv+K7HzRyufNcH0ZZqqJjNm3ojl866vUWnqfFTTXrTV77Tv33XSlPjTlbS9Qaf3GvKpzZ34t6E623Tq8tPPrLTtqMWn9gzJtUj3zyV6+o4HYmZcprmqSnt5gu5hAxZ
   </data>
  </layer>
 </map>

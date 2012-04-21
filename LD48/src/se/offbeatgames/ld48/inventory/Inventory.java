@@ -47,6 +47,7 @@ public class Inventory {
     }
 
     public void draw(int x, int y, Font font, Graphics g) {
+        font.drawString(x - 42, y - 40, "Inventory");
         for (int i = -1; i < 2; i++) {
             texture.draw(x + (i * 32), y, x + (i * 32) + 32, y + 32, 0, 0, 32, 32);
         }

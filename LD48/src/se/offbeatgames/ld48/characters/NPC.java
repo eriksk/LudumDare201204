@@ -20,7 +20,7 @@ public class NPC extends GameCharacter{
     @Override
     public void load(ContentManager content) {
         super.load(content);        
-        animations.put("idle", new Animation(new int[]{ 8 }, 500f));
+        animations.put("idle", new Animation(new int[]{ 16 }, 500f));
         setAnim("idle");
     }
 

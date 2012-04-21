@@ -8,6 +8,11 @@
    eJyTZGBgkKQQ85OJR/WP6h/M+iXR6MGqn1DexCcPAPzuEYs=
   </data>
  </layer>
+ <layer name="misc" width="16" height="16">
+  <data encoding="base64" compression="zlib">
+   eJxjYKAeMCQS0wJoQWkdINbFIo8sro1F3ogE/cZkuhEfGHU/8fpp4f6RCgBJ5whF
+  </data>
+ </layer>
  <layer name="collision" width="16" height="16" opacity="0.4">
   <data encoding="base64" compression="zlib">
    eJzjYGBg4KAQkwtG9Y/qH8z6OdDowaqfUN7EJw8A5O0CCQ==
