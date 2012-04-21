@@ -1,6 +1,8 @@
 package se.offbeatgames.ld48lib.content;
 
 import java.util.HashMap;
+import org.newdawn.slick.AngelCodeFont;
+import org.newdawn.slick.Font;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.openal.Audio;
@@ -61,5 +63,16 @@ public class ContentManager {
             ex.printStackTrace();
         }        
         return a;
+    }
+    
+    public Font loadFont(String path){
+        Font font;
+        try {
+            font = new AngelCodeFont(root + path + ".fnt", new Image(root + path + ".png"));
+            return font;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
     }
 }

@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="32" tileheight="32">
- <tileset firstgid="1" name="maps" tilewidth="32" tileheight="32">
-  <image source="../gfx/maps.png" width="256" height="256"/>
+<map version="1.0" orientation="orthogonal" width="32" height="32" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="maps" tilewidth="16" tileheight="16">
+  <image source="../gfx/maps.png" width="128" height="128"/>
  </tileset>
- <layer name="Tile Layer 1" width="32" height="32">
+ <layer name="bg" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt08sNACAIBFEsi/4bswNFw08zhzm/TQgqIkrbhkNV7ou+p3u6Icq2+JE2fu/b4+NH+pYN+Pi/+tX/h4+fucHq3VTldvFXG7J8jybSzV85
+   eJztlUEOwCAIBPFZ/v9jvZoYWmDZEiMHTgZmRMUpIrNji6HE29ogsy38DC8G3+PB5FscKvmW3NP5moMnr4rPPANvbhU/owe38pG5g/haHKLekd55amT8W+z9R2ZYdg8q7uCJ/Ogd+KqF8iPstV7zm4/wEYc/3v8NfM1Dq4/O0AdxOFJR
+  </data>
+ </layer>
+ <layer name="houses" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkAOEkPBAAE4gFgZirgGyfxTQBxBKZ0I4MLUAoXRGa/sJAQEgFgFifigGsQXpaD8ofPigWBhK0yNPMtLBjlEwOIAoEhZH48MwvYAYkepoVRYQa/9Qqx+JLUdpFa7E2k+rcB2p5fgoGAUDBQDpFwV7
+  </data>
+ </layer>
+ <layer name="collision" width="32" height="32" opacity="0.32">
+  <data encoding="base64" compression="zlib">
+   eJztk0sKACAIBV12/xO3dWEYlZ9gBiLoBaORIgAA0JWhlpd7d0/9es/2e3Tyi8T7s/uz/LqOire2ziu8u/kL/00eWUPWH1jNeeUsAAD8ygSRYwGp
   </data>
  </layer>
 </map>

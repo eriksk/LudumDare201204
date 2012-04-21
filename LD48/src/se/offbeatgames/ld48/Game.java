@@ -8,10 +8,12 @@ import org.lwjgl.input.Keyboard;
 import org.lwjgl.openal.AL;
 import org.newdawn.slick.AppGameContainer;
 import org.newdawn.slick.BasicGame;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import se.offbeatgames.ld48.scenes.GameScene;
+import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
 /**
@@ -21,8 +23,8 @@ import se.offbeatgames.ld48lib.scenes.SceneManager;
 public class Game extends BasicGame {
 
     public static String title = "TODO: Title";
-    public static int width = 1280;
-    public static int height = 720;
+    public static int width = 512;
+    public static int height = 512;
     public static boolean fullScreen = false;
     public static int fps = -1;
     SceneManager sceneMan;
@@ -33,6 +35,15 @@ public class Game extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
+        container.getGraphics().setAntiAlias(false);
+        InputManager.I().bootstrap(new int[]{
+            Keyboard.KEY_LEFT,
+            Keyboard.KEY_RIGHT,
+            Keyboard.KEY_UP,
+            Keyboard.KEY_DOWN,
+            Keyboard.KEY_SPACE
+        });
+        
         sceneMan = new SceneManager();
         sceneMan.load();
         
@@ -41,6 +52,7 @@ public class Game extends BasicGame {
         sceneMan.addScene(gameScene, "game");
         
         sceneMan.setCurrentScene("game");
+        
     }
 
     @Override
@@ -52,10 +64,14 @@ public class Game extends BasicGame {
         if(Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)){
             container.exit();
         }
+        InputManager.I().update();
     }
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
+        //container.getGraphics().setAntiAlias(true);
+        g.setColor(Color.white);
+        g.fillRect(0, 0, width, height);
         sceneMan.draw(g);
     }
 

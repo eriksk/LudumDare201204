@@ -14,6 +14,5 @@ public class TiledData {
     public Layer[] layers;
     
     public TiledData() {
-        layers = new Layer[0];
     }
 }

@@ -7,6 +7,7 @@ package se.offbeatgames.ld48lib.input;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map.Entry;
+import org.lwjgl.input.Keyboard;
 
 /**
  *
@@ -37,6 +38,7 @@ public class InputManager {
         for (int i = 0; i < keys.length; i++) {
             this.keys.put(keys[i], false);
         }
+        update();
     }
     
     public boolean isKeyUp(int key){
@@ -56,7 +58,7 @@ public class InputManager {
              // copy and clear
              Entry<Integer, Boolean> c = iterator.next();
              oldkeys.put(c.getKey(), c.getValue());
-             c.setValue(false);
+             c.setValue(Keyboard.isKeyDown(c.getKey()));
          }
     }
 }

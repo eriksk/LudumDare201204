@@ -3,9 +3,19 @@
  <tileset firstgid="1" name="maps" tilewidth="16" tileheight="16">
   <image source="../gfx/maps.png" width="128" height="128"/>
  </tileset>
- <layer name="Tile Layer 1" width="32" height="32">
+ <layer name="bg" width="32" height="32">
   <data encoding="base64" compression="zlib">
-   eJzt1MENwCAMQ9EwFvsv1gUqteTbBKEcfIRnImBGxOzgjI/sclQ9qEM7VPpOu/32b/CzfYm94x8mdmZ2ap/OgM7/BJ/sQ++P4hyKDpW+e/3bHn/WKH0SxRty2if4rg6V/ort6JDxVT2I3fHlAU/Zcuk=
+   eJztlUEOwCAIBPFZ/v9jvZoYWmDZEiMHTgZmRMUpIrNji6HE29ogsy38DC8G3+PB5FscKvmW3NP5moMnr4rPPANvbhU/owe38pG5g/haHKLekd55amT8W+z9R2ZYdg8q7uCJ/Ogd+KqF8iPstV7zm4/wEYc/3v8NfM1Dq4/O0AdxOFJR
+  </data>
+ </layer>
+ <layer name="houses" width="32" height="32">
+  <data encoding="base64" compression="zlib">
+   eJztV0kKwzAMdHtLD12SLv//aR1wQAgtI8eiOXRgSFpLM4qIRVzKHxbOjUiMF9fji2jSuFE1RHV4DXv70aPBc7T7iI6VMxNK+VpdqHcpds5UuVReDB3vP20d7YGlhXhqNYzeS1zf888A8mzSmvaeSeteLFIjh/WeRfyjswzFvfJZeWtc7x9BDeofxdqfa+PSrlqvRvqfOj08/6y996saenCUGja8CD/s98YMf6kPbzB/7yzSgPp7c+toQOdoVl9R/6y+jpzjHMh+HjnHqS/1z54r2jd4xvlA07K+f5GzFM+J1KB5FyHW0pRqjjyDdRZBMeIMRa8SvvG3BoU=
+  </data>
+ </layer>
+ <layer name="collision" width="32" height="32" opacity="0.32">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAADwbhAAAAE=
   </data>
  </layer>
 </map>

@@ -7,7 +7,9 @@ package se.offbeatgames.tiles;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SpriteSheet;
+import se.offbeatgames.ld48.characters.GameCharacter;
 import se.offbeatgames.ld48lib.content.ContentManager;
+import se.offbeatgames.ld48lib.geoms.Rectangle;
 
 /**
  *
@@ -33,6 +35,39 @@ public class MapTiles {
         sheet = new SpriteSheet(texture, 16, 16);
     }
 
+    public void collide(GameCharacter character) {
+        Layer collLayer = getCollisionLayer();
+        int col = (int) (character.x + 8) / 16;
+        int row = (int) (character.y + 8) / 16;
+        int cell = collLayer.grid[col][row];
+        if (cell != -1) {
+            // collision found
+            character.x = character.col * 16;
+            character.y = character.row * 16;
+        }
+    }
+
+    public boolean collides(float x, float y) {
+        Layer collLayer = getCollisionLayer();
+        int col = (int) (x) / 16;
+        int row = (int) (y) / 16;
+        int cell = collLayer.grid[col][row];
+        if (cell != -1) {
+            // collision found
+            return true;
+        }
+        return false;
+    }
+
+    public Layer getCollisionLayer() {
+        for (int i = 0; i < layers.length; i++) {
+            if ("collision".equals(layers[i].name)) {
+                return layers[i];
+            }
+        }
+        return null;
+    }
+
     public void update(float dt) {
     }
 
@@ -42,13 +77,15 @@ public class MapTiles {
         int cell = 0;
         sheet.startUse();
         for (int l = 0; l < layers.length; l++) {
-            for (int i = 0; i < layers[l].grid.length; i++) {
-                for (int j = 0; j < layers[l].grid[i].length; j++) {
-                    cell = layers[l].grid[i][j];
-                    if (cell != -1) {
-                        col = cell % 8;
-                        row = cell / 8;
-                        sheet.renderInUse(i * 16, j * 16, col, row);
+            if (!"collision".equals(layers[l].name)) {
+                for (int i = 0; i < layers[l].grid.length; i++) {
+                    for (int j = 0; j < layers[l].grid[i].length; j++) {
+                        cell = layers[l].grid[i][j];
+                        if (cell != -1) {
+                            col = cell % 8;
+                            row = cell / 8;
+                            sheet.renderInUse(i * 16, j * 16, col, row);
+                        }
                     }
                 }
             }
