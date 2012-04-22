@@ -73,6 +73,8 @@ public class SpeechTree {
                     val = Inventory.NAIL;
                 } else if ("FLAG".equals(obj)) {
                     val = Inventory.FLAG;
+                } else if ("NAILS".equals(obj)) {
+                    val = -2;
                 } else if ("CUT".equals(obj)) {
                     val = -1;
                 }

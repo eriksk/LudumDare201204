@@ -12,7 +12,9 @@ import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import se.offbeatgames.ld48.scenes.GameOverScene;
 import se.offbeatgames.ld48.scenes.GameScene;
+import se.offbeatgames.ld48.scenes.MainMenuScene;
 import se.offbeatgames.ld48lib.audio.AudioManager;
 import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
@@ -53,8 +55,16 @@ public class Game extends BasicGame {
         GameScene gameScene = new GameScene(sceneMan);
         gameScene.load(container);
         sceneMan.addScene(gameScene, "game");
+        
+        GameOverScene goScene = new GameOverScene(sceneMan);
+        goScene.load(container);
+        sceneMan.addScene(goScene, "gameover");
+        
+        MainMenuScene menu = new MainMenuScene(sceneMan);
+        menu.load(container);
+        sceneMan.addScene(menu, "menu");
 
-        sceneMan.setCurrentScene("game");
+        sceneMan.setCurrentScene("menu");
 
     }
 
@@ -72,7 +82,6 @@ public class Game extends BasicGame {
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-        //container.getGraphics().setAntiAlias(true);
         g.setColor(Color.black);
         g.fillRect(0, 0, width, height);
         sceneMan.draw(g);

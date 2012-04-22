@@ -4,8 +4,12 @@
  */
 package se.offbeatgames.ld48.scenes;
 
+import org.lwjgl.input.Keyboard;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import se.offbeatgames.ld48.Game;
+import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.Scene;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
@@ -21,12 +25,10 @@ public class MainMenuScene extends Scene {
 
     @Override
     public void onActivated() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onDeactivated() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -37,11 +39,17 @@ public class MainMenuScene extends Scene {
     @Override
     public void update(float dt) {
         super.update(dt);
+        if(InputManager.I().isKeyClicked(Keyboard.KEY_SPACE)){
+            manager.setCurrentScene("game");
+        }
     }
 
     @Override
     public void draw(Graphics g) {
         super.draw(g);
+        g.setColor(Color.white);
+        g.drawString("TEH GAM3 NAMEZ", Game.width / 2f, 100);
+        g.drawString("Prezz SPaCe to Startz!", Game.width / 2f, 150);
     }
     
 }

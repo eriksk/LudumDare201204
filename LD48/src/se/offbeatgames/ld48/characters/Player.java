@@ -50,6 +50,12 @@ public class Player extends GameCharacter {
         animations.put("walk_right", new Animation(new int[]{4, 3, 5, 3}, 100f));
         setAnim("walk_down");
         canCutTrees = false;
+        
+        //TODO: REMOVE DEBUG CODE!
+        canCutTrees = true;
+        inventory.add(Inventory.TREE, 100);
+        inventory.add(Inventory.FLAG, 1);
+        inventory.add(Inventory.NAIL, 200);
     }
 
     public void setConversation(SpeechTree speech) {

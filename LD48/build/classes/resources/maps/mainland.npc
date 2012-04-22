@@ -1,3 +1,4 @@
-16,21,15/text=Oops, I dropped a nail!&give=FLAG&give=NAIL
-16,17,8/text=Psst check this out. If you press the SPACE BUTTON when standing next to a tree, you can cut it down. Easiest way to collect wood for sure!&give=CUT
+16,21,15/text=Oops, I dropped a nail!&give=NAIL
 17,14,2/text=So you want to leave huh? You see that blackness across the water? That's the end of the world. This is all there is to it... You can try, but you won't succeed.
+18,27,14/text=Legend says, that if you hold down the TAB BUTTON, you will see your inventory. I've never dared to try it myself though.
+18,27,31/text=You want to build a boat and get off this island? Well you would need at least some wood, nails and a sail. Or at least something that would work as a sail. To put it all together you could use the workbench on the dock. Here are some nails if you need?&give=NAILS

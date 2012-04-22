@@ -25,8 +25,8 @@ public class SpeechLine {
     }
 
     public void run(Player player) {
-        if("text".equals(command)){
-        }else if("give".equals(command)){
+        if ("text".equals(command)) {
+        } else if ("give".equals(command)) {
             switch (int_values[0]) {
                 case Inventory.TREE:
                     player.inventory.add(Inventory.TREE, 1);
@@ -37,11 +37,16 @@ public class SpeechLine {
                     break;
                 case Inventory.NAIL:
                     player.inventory.add(Inventory.NAIL, 1);
-                        Gui.log("1 Nail was added to inventory");
+                    Gui.log("1 Nail was added to inventory");
                     break;
                 case -1:
                     player.canCutTrees = true;
-                        Gui.log("Ability CUT learned!");
+                    Gui.log("Ability CUT learned!");
+                    break;
+                case -2:
+                    player.canCutTrees = true;
+                    player.inventory.add(Inventory.NAIL, 20);
+                    Gui.log("20 Nails were added to inventory");
                     break;
             }
         }

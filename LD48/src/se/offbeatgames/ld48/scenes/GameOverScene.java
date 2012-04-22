@@ -4,8 +4,10 @@
  */
 package se.offbeatgames.ld48.scenes;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import se.offbeatgames.ld48.Game;
 import se.offbeatgames.ld48lib.scenes.Scene;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
@@ -26,12 +28,10 @@ public class GameOverScene extends Scene{
 
     @Override
     public void onActivated() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
     public void onDeactivated() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     @Override
@@ -42,5 +42,7 @@ public class GameOverScene extends Scene{
     @Override
     public void draw(Graphics g) {
         super.draw(g);
+        g.setColor(Color.white);
+        g.drawString("TEH GAM3 ARE OVAR!", Game.width / 2, Game.height / 2);
     }
 }

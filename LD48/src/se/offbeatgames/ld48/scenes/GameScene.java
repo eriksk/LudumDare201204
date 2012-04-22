@@ -46,7 +46,7 @@ public class GameScene extends Scene {
         super.load(container);
         content = new ContentManager("resources/");
         
-        charMan = new CharacterManager();
+        charMan = new CharacterManager(this);
         charMan.load(content);
         
         cam = new Camera2D();
@@ -62,6 +62,10 @@ public class GameScene extends Scene {
         
         charMan.player.x = 14 * 16;
         charMan.player.y = 5 * 16;
+    }
+    
+    public void gameOver(){
+        manager.setCurrentScene("gameover");
     }
     
     @Override
