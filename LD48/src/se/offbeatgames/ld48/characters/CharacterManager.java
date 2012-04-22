@@ -31,19 +31,21 @@ public class CharacterManager {
         player.x = Game.width / 2;
         player.y = Game.height / 2;
 
-        NPC mayor = new NPC();
-        mayor.load(content);
-        mayor.x = 19 * 16;
-        mayor.y = 15 * 16;
-        characters.add(mayor);
+        //TODO: load from map
+        //NPC mayor = new NPC();
+        //mayor.load(content);
+        //mayor.x = 19 * 16;
+        //mayor.y = 15 * 16;
+        //characters.add(mayor);
     }
 
     public void update(float dt, MapTiles map, ParticleManagerImpl pMan) {
+
         for (int i = 0; i < characters.size(); i++) {
             GameCharacter c = characters.get(i);
             c.update(dt, map);
         }
-        player.update(dt, map, pMan);
+        player.update(dt, map, pMan, characters);
     }
 
     public void draw() {

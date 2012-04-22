@@ -4,6 +4,8 @@
  */
 package se.offbeatgames.ld48.ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.lwjgl.input.Keyboard;
 import org.newdawn.slick.Font;
 import org.newdawn.slick.Graphics;
@@ -16,25 +18,48 @@ import se.offbeatgames.ld48lib.input.InputManager;
  */
 public class Gui {
 
-    private TextBox text;
-    public Font font;
+    public static TextBox textBox;
+    public static Font font;
+    public static List<String> log;
+    private static float logCurrent, logInterval = 1000;
 
-    public Gui() {
-    }
-
-    public void load(ContentManager content) {   
+    public static void load(ContentManager content) {
         font = content.loadFont("fonts/font");
-        text = new TextBox(font);
-        text.setText("Hello.. This is a box with text in it. I should probably do some wrapping here... Otherwise it will be too much.");
+        textBox = new TextBox(font);
+        log = new ArrayList<String>();
     }
 
-    public void update(float dt) {
-        if(InputManager.I().isKeyClicked(Keyboard.KEY_SPACE)){
-            text.step(); 
+    public static void log(String message) {
+        log.add(message);
+        if (log.size() > 5) {
+            log.remove(0);
         }
     }
 
-    public void draw(Graphics g) {
-        text.draw(g, font);
+    public static void setText(String text) {
+        textBox.setText(text);
+    }
+
+    public static void update(float dt) {
+
+        if (log.size() > 0) {
+            logCurrent += dt;
+            if (logCurrent > logInterval) {
+                logCurrent = 0f;
+                log.remove(0);
+            }
+        } else {
+            logCurrent = 0f;
+        }
+
+    }
+
+    public static void draw(Graphics g) {
+        for (int i = 0; i < log.size(); i++) {
+            font.drawString(16, 24 + (i * 18), log.get(i));
+        }
+        if (!"".equals(textBox.text)) {
+            textBox.draw(g, font);
+        }
     }
 }

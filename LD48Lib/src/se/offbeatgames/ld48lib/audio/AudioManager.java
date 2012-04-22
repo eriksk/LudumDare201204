@@ -28,16 +28,12 @@ public class AudioManager {
     private AudioManager() {
         sounds = new HashMap<String, Audio>();
         musicVolume = 0.2f;
-        soundFxVolume = 0.2f;
+        soundFxVolume = 1f;
     }
     
     public void load(ContentManager content){
-        sounds.put("coin", content.loadWav("audio/coin.wav"));
-        sounds.put("hit", content.loadWav("audio/hit.wav"));
-        sounds.put("fire", content.loadWav("audio/fire.wav"));
-        sounds.put("fire_enemy", content.loadWav("audio/fire_enemy.wav"));
-        sounds.put("explosion", content.loadWav("audio/explosion.wav"));
-        sounds.put("song1", content.loadWav("audio/song1.wav"));
+        sounds.put("main", content.loadWav("audio/ld2.wav"));
+        sounds.put("cut", content.loadWav("audio/cut.wav"));
     }
     
     public void playSound(String name){

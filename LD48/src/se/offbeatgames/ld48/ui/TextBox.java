@@ -17,7 +17,7 @@ import se.offbeatgames.ld48.Game;
  */
 public class TextBox {
 
-    protected String text;
+    protected String text = "";
     protected List<String> lines;
     protected int width, height;
     protected Color bgColor, borderColor;
@@ -53,18 +53,21 @@ public class TextBox {
         }
         lines.add(line);
     }
-    
-    public void reset(){
+
+    public void reset() {
         currentLine = 0;
+        lines.clear();
+        text = "";
     }
 
-    public void step() {
+    public boolean step() {
         currentLine += 2;
         //TODo: look for script stuff
         if (currentLine >= lines.size()) {
             reset();
-            // TODO: close
+            return false;
         }
+        return true;
     }
 
     public void draw(Graphics g, Font font) {

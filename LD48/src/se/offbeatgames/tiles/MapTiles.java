@@ -26,14 +26,16 @@ public class MapTiles {
     private Image texture;
     private SpriteSheet sheet;
     private MapScript[] scripts;
+    public CharacterDef[] characters;
 
-    public MapTiles(TiledData data, MapScript[] scripts) {
+    public MapTiles(TiledData data, MapScript[] scripts, CharacterDef[] characters) {
         this.data = data;
         this.layers = data.layers;
         for (int i = 0; i < layers.length; i++) {
             layers[i].convertToGrid();
         }
         this.scripts = scripts;
+        this.characters = characters;
     }
 
     public void load(ContentManager content) {
@@ -58,13 +60,15 @@ public class MapTiles {
     public boolean cutDownTree(float x, float y, ParticleManagerImpl pMan) {
         int col = (int) x / 16;
         int row = (int) y / 16;
-        for (int l = 0; l < layers.length; l++) {
-            Layer layer = layers[l];
-            if (layer.grid[col][row] == 1) {
-                pMan.cutTree((col * 16) + 8, (row * 16) + 8);
-                layer.grid[col][row] = -1;
-                getCollisionLayer().grid[col][row] = -1;
-                return true;
+        if (col > -1 && col < getCollisionLayer().width && row > -1 && row < getCollisionLayer().height) {
+            for (int l = 0; l < layers.length; l++) {
+                Layer layer = layers[l];
+                if (layer.grid[col][row] == 1) {
+                    pMan.cutTree((col * 16) + 8, (row * 16) + 8);
+                    layer.grid[col][row] = -1;
+                    getCollisionLayer().grid[col][row] = -1;
+                    return true;
+                }
             }
         }
         return false;

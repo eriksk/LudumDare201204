@@ -13,6 +13,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
 import se.offbeatgames.ld48.scenes.GameScene;
+import se.offbeatgames.ld48lib.audio.AudioManager;
 import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
@@ -37,32 +38,33 @@ public class Game extends BasicGame {
     public void init(GameContainer container) throws SlickException {
         container.getGraphics().setAntiAlias(false);
         InputManager.I().bootstrap(new int[]{
-            Keyboard.KEY_LEFT,
-            Keyboard.KEY_RIGHT,
-            Keyboard.KEY_UP,
-            Keyboard.KEY_DOWN,
-            Keyboard.KEY_SPACE,
-            Keyboard.KEY_TAB
-        });
-        
+                    Keyboard.KEY_LEFT,
+                    Keyboard.KEY_RIGHT,
+                    Keyboard.KEY_UP,
+                    Keyboard.KEY_DOWN,
+                    Keyboard.KEY_SPACE,
+                    Keyboard.KEY_TAB
+                });
+
+
         sceneMan = new SceneManager();
         sceneMan.load();
-        
+
         GameScene gameScene = new GameScene(sceneMan);
         gameScene.load(container);
         sceneMan.addScene(gameScene, "game");
-        
+
         sceneMan.setCurrentScene("game");
-        
+
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
         float dt = delta;
         sceneMan.update(dt);
-        
+
         //TODO: remove before release
-        if(Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)){
+        if (Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
             container.exit();
         }
         InputManager.I().update();
@@ -71,7 +73,7 @@ public class Game extends BasicGame {
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
         //container.getGraphics().setAntiAlias(true);
-        g.setColor(Color.white);
+        g.setColor(Color.black);
         g.fillRect(0, 0, width, height);
         sceneMan.draw(g);
     }
@@ -84,7 +86,7 @@ public class Game extends BasicGame {
             gc.start();
         } catch (SlickException ex) {
             ex.printStackTrace();
-        }finally{
+        } finally {
             AL.destroy();
         }
     }

@@ -22,9 +22,6 @@ Stuff you need for the boat
 Inventory
 
 Interactions
-Give [item]
-Talk to [NPC]
-Pick up [item]
 
 Special inventory list for the boat parts
 [wood][nails][sail][mast][wheel]
@@ -33,16 +30,25 @@ Special inventory list for the boat parts
 Interaction system
 * Node tree based on selection
 
-Animations
-* water
-* Flag
-* Boat?
-
-Scenes
-* GameScene - normal
-* Cutscene - non interactable... maybe only with text tough...
-
 Text
 * Textboxes
 	* Text wrapping
 * Color coded text (if there's time)
+
+
+TODO: 
+* Build boat
+
+==============================
+Conversation
+
+* Conversation 1..1 TextBox
+* Set conversation
+* Decisions yes/no
+* Popup? For receiveing items and selections
+
+* Conversation syntax
+text: It's dangerous to go alone, take this! [give(TREE)]
+text: Are you stupid? [selection:(Here's the text that goes if you select yes, Heres the text that goes if you select no)]
+
+

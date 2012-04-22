@@ -23,7 +23,6 @@ public class GameCharacter {
     protected String currentAnim;
     protected SpriteSheet sheet;
     protected Image texture;
-    protected SpeechTree speech;
 
     public GameCharacter() {
         currentAnim = "";
@@ -40,6 +39,15 @@ public class GameCharacter {
             this.currentAnim = name;
             animations.get(currentAnim).reset();
         }
+    }
+    
+    public boolean intersects(GameCharacter other){
+        if(x > other.x + 16) return false;
+        if(y > other.y + 16) return false;
+        if(x + 16 < other.x) return false;
+        if(y + 16 < other.y) return false;
+        
+        return true;
     }
     
     public void update(float dt, MapTiles map){
