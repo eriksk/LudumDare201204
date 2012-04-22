@@ -11,7 +11,7 @@ import se.offbeatgames.ld48.inventory.Inventory;
 import se.offbeatgames.ld48.particles.ParticleManagerImpl;
 import se.offbeatgames.ld48.scenes.GameScene;
 import se.offbeatgames.ld48lib.content.ContentManager;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *

@@ -5,9 +5,11 @@
 package se.offbeatgames.ld48.scenes;
 
 import org.newdawn.slick.Color;
+import org.newdawn.slick.Font;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import se.offbeatgames.ld48.Game;
+import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.ld48lib.scenes.Scene;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
@@ -17,6 +19,9 @@ import se.offbeatgames.ld48lib.scenes.SceneManager;
  */
 public class GameOverScene extends Scene{
 
+    Font font;
+    String text = "Thus, the boy succeeded in building\nhis boat. But as he\nsailed towards the darkness\nthat laid ahead, the boat\nreached a stop.\nThe nothingness was the\nend of the world. And it was\nonly 100 feet from the dock.\nToo bad!\n\nThanks for playing!\n/@Th3dz";
+    
     public GameOverScene(SceneManager manager) {
         super(manager);
     }
@@ -24,6 +29,7 @@ public class GameOverScene extends Scene{
     @Override
     public void load(GameContainer container) {
         super.load(container);
+        font = new ContentManager("resources/").loadFont("fonts/font");
     }
 
     @Override
@@ -42,7 +48,6 @@ public class GameOverScene extends Scene{
     @Override
     public void draw(Graphics g) {
         super.draw(g);
-        g.setColor(Color.white);
-        g.drawString("TEH GAM3 ARE OVAR!", Game.width / 2, Game.height / 2);
+        font.drawString((Game.width / 2f) - font.getWidth(text) / 2f, 100, text);
     }
 }

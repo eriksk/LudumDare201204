@@ -6,7 +6,7 @@ package se.offbeatgames.ld48.cameras;
 
 import org.newdawn.slick.Graphics;
 import se.offbeatgames.ld48.Game;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *

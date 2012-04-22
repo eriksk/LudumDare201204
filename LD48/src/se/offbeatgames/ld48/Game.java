@@ -15,7 +15,6 @@ import org.newdawn.slick.SlickException;
 import se.offbeatgames.ld48.scenes.GameOverScene;
 import se.offbeatgames.ld48.scenes.GameScene;
 import se.offbeatgames.ld48.scenes.MainMenuScene;
-import se.offbeatgames.ld48lib.audio.AudioManager;
 import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
 
@@ -25,11 +24,11 @@ import se.offbeatgames.ld48lib.scenes.SceneManager;
  */
 public class Game extends BasicGame {
 
-    public static String title = "TODO: Title";
+    public static String title = "Tiny World - Th3dz";
     public static int width = 512;
     public static int height = 512;
     public static boolean fullScreen = false;
-    public static int fps = -1;
+    public static int fps = 60;
     SceneManager sceneMan;
 
     public Game() {
@@ -38,6 +37,7 @@ public class Game extends BasicGame {
 
     @Override
     public void init(GameContainer container) throws SlickException {
+        container.setShowFPS(false);
         container.getGraphics().setAntiAlias(false);
         InputManager.I().bootstrap(new int[]{
                     Keyboard.KEY_LEFT,
@@ -65,18 +65,12 @@ public class Game extends BasicGame {
         sceneMan.addScene(menu, "menu");
 
         sceneMan.setCurrentScene("menu");
-
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
         float dt = delta;
         sceneMan.update(dt);
-
-        //TODO: remove before release
-        if (Keyboard.isKeyDown(Keyboard.KEY_ESCAPE)) {
-            container.exit();
-        }
         InputManager.I().update();
     }
 

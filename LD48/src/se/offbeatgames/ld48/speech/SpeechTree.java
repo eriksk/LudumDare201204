@@ -25,7 +25,6 @@ public class SpeechTree {
     }
 
     public void reset() {
-        //TODO: reset on new scene
         current = 0;
     }
 

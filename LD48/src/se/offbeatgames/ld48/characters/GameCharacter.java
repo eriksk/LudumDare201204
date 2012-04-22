@@ -10,7 +10,7 @@ import org.newdawn.slick.SpriteSheet;
 import se.offbeatgames.ld48.speech.SpeechTree;
 import se.offbeatgames.ld48lib.animations.Animation;
 import se.offbeatgames.ld48lib.content.ContentManager;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *

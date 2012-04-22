@@ -7,7 +7,7 @@ package se.offbeatgames.ld48.characters;
 import se.offbeatgames.ld48.speech.SpeechTree;
 import se.offbeatgames.ld48lib.animations.Animation;
 import se.offbeatgames.ld48lib.content.ContentManager;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *

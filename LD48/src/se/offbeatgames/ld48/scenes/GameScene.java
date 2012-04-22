@@ -20,9 +20,9 @@ import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.ld48lib.input.InputManager;
 import se.offbeatgames.ld48lib.scenes.Scene;
 import se.offbeatgames.ld48lib.scenes.SceneManager;
-import se.offbeatgames.tiles.CharacterDef;
-import se.offbeatgames.tiles.MapTiles;
-import se.offbeatgames.tiles.TiledImporter;
+import se.offbeatgames.ld48.tiles.CharacterDef;
+import se.offbeatgames.ld48.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.TiledImporter;
 
 /**
  *
@@ -87,7 +87,7 @@ public class GameScene extends Scene {
             prevX = charMan.player.x;
             prevY = charMan.player.y + 16;
         }
-        map = TiledImporter.load(ResourceLoader.getResource("resources/maps/" + name + ".json").getPath());
+        map = TiledImporter.load("resources/maps/" + name + ".json");
         map.load(content);
         charMan.characters.clear();
         for (int i = 0; i < map.characters.length; i++) {

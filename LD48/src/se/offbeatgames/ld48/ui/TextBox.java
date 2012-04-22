@@ -62,7 +62,6 @@ public class TextBox {
 
     public boolean step() {
         currentLine += 2;
-        //TODo: look for script stuff
         if (currentLine >= lines.size()) {
             reset();
             return false;

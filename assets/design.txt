@@ -48,7 +48,4 @@ Conversation
 * Popup? For receiveing items and selections
 
 * Conversation syntax
-text: It's dangerous to go alone, take this! [give(TREE)]
-text: Are you stupid? [selection:(Here's the text that goes if you select yes, Heres the text that goes if you select no)]
-
-
+text=It's dangerous to go alone, take this!|give=TREE

@@ -15,7 +15,7 @@ import se.offbeatgames.ld48lib.animations.Animation;
 import se.offbeatgames.ld48lib.audio.AudioManager;
 import se.offbeatgames.ld48lib.content.ContentManager;
 import se.offbeatgames.ld48lib.input.InputManager;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *
@@ -51,11 +51,6 @@ public class Player extends GameCharacter {
         setAnim("walk_down");
         canCutTrees = false;
         
-        //TODO: REMOVE DEBUG CODE!
-        canCutTrees = true;
-        inventory.add(Inventory.TREE, 100);
-        inventory.add(Inventory.FLAG, 1);
-        inventory.add(Inventory.NAIL, 200);
     }
 
     public void setConversation(SpeechTree speech) {

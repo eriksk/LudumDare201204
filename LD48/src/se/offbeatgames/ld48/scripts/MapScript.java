@@ -6,7 +6,7 @@ package se.offbeatgames.ld48.scripts;
 
 import se.offbeatgames.ld48.characters.CharacterManager;
 import se.offbeatgames.ld48.scenes.GameScene;
-import se.offbeatgames.tiles.MapTiles;
+import se.offbeatgames.ld48.tiles.MapTiles;
 
 /**
  *
